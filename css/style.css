@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Spartan', sans-serif;
+    background: linear-gradient(to right, #6cddc1, #da166e);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    background: #fff;
+    background: linear-gradient(160deg, #dd2476, #eee8e7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.search-box input {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #dbcecc, #dd2476);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    font-weight: 500;
+    transition: transform 0.4s ease, background 0.4s ease;
+    text-align: center;
+}
+
+.search-box button:hover {
+    background: linear-gradient(to right, #dd2476, #dbcecc);
+    transform: translateY(-5px) scale(1.01);
+}
+
+.glassmorphism-box {
+    background: #ffffff1a;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 10, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 100%;
+    margin-top: 5px;
+    max-width: 400px;
+    color: #fff;
+    display: none;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+
+.glassmorphism-box img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.glassmorphism-box h2 {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+}
+
+.glassmorphism-box p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.glassmorphism-box a {
+    text-decoration: none;
+    font-weight: 900;
+    margin-top: 40px;
+    background-color: #ffffff1a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 5px;
+    color: #fff;
+    border-radius: 8px;
+}
+
+
+.glassmorphism-box .stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.stats div {
+    text-align: center;
+}
+
+.stats div h3 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.stats div p {
+    font-size: 14px;
+    margin: 5px;
+}
+
+
