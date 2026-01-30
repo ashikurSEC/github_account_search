@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analyst // Intelligence Dashboard</title>
+  <!-- Inline FOUC Protection -->
+  <style>
+    body {
+      opacity: 0;
+      background: #000;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-BYJBi4ob.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D8CTpXfI.css">
+</head>
+
+<body class="selection:bg-indigo-500/30 selection:text-indigo-200">
+
+  <!-- Preloader -->
+  <div id="app-cloak">
+    <div class="pulsar"></div>
+  </div>
+
+  <!-- Background Aurora -->
+  <div class="aurora-container">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+  </div>
+
+  <!-- Main Scene -->
+  <main id="main-scene" class="min-h-screen px-6 py-12 md:px-12 lg:px-24">
+
+    <!-- INTRO VIEW -->
+    <section id="intro-view" class="min-h-[80vh] flex flex-col items-center justify-center text-center">
+      <h1 class="text-premium text-gradient text-6xl md:text-9xl mb-12" id="title-main">
+        DEVELOPER<br>ANALYTICS.
+      </h1>
+
+      <div class="w-full max-w-2xl" id="search-box">
+        <div class="search-capsule flex items-center gap-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            class="text-zinc-500">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <input type="text" id="username-input" class="search-input" placeholder="Search GitHub username..."
+            autocomplete="off" spellcheck="false">
+          <button id="search-btn" class="search-btn">ANALYZE</button>
+        </div>
+        <p id="error-hint"
+          class="mt-6 text-sm font-mono text-zinc-500 opacity-0 group-error:opacity-100 transition-opacity">
+          COMMAND_ERROR: USER_NOT_FOUND
+        </p>
+      </div>
+    </section>
+
+    <!-- DASHBOARD VIEW -->
+    <section id="dashboard-view" class="hidden opacity-0">
+
+      <!-- Context Header -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-20">
+        <div class="flex items-center gap-6 group cursor-pointer" id="back-trigger">
+          <div
+            class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 transition-all group-hover:bg-white group-hover:text-black">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-premium text-4xl" id="display-name">Profile Name</h2>
+            <p class="text-zinc-500 font-mono text-sm tracking-widest uppercase" id="display-handle">@username</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest">Database Sync Success</span>
+        </div>
+      </div>
+
+      <!-- Bento Structure -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+        <!-- Profile Block (Span 4) -->
+        <div class="lg:col-span-4 flex flex-col gap-8">
+          <div class="premium-card">
+            <div class="avatar-wrapper mb-10 aspect-square">
+              <img id="avatar" src="" alt="" class="w-full h-full object-cover">
+            </div>
+            <p id="bio" class="text-zinc-400 text-lg leading-relaxed font-light italic"></p>
+          </div>
+
+          <div class="premium-card py-8 flex items-center justify-between">
+            <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest">Established</span>
+            <span id="created-at" class="text-xl font-bold font-[Outfit]">2020</span>
+          </div>
+
+          <div class="space-y-4">
+            <div id="location-ui" class="hidden flex items-center gap-4 text-zinc-500">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span id="location" class="text-sm font-medium text-white"></span>
+            </div>
+            <div id="website-ui" class="hidden flex items-center gap-4 text-zinc-500">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+              <a id="website" href="#" target="_blank"
+                class="text-sm font-medium text-white hover:text-indigo-400 truncate"></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Block (Span 8) -->
+        <div class="lg:col-span-8 flex flex-col gap-8">
+
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="premium-card">
+              <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-4 block">Repositories</span>
+              <div class="stat-value text-indigo-400" id="repos-count">0</div>
+            </div>
+            <div class="premium-card">
+              <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-4 block">Followers</span>
+              <div class="stat-value" id="followers-count">0</div>
+            </div>
+            <div class="premium-card">
+              <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-4 block">Following</span>
+              <div class="stat-value" id="following-count">0</div>
+            </div>
+          </div>
+
+          <!-- Repositories -->
+          <div class="premium-card flex-1">
+            <h3 class="text-premium text-2xl mb-12">FEATURED_ARCHIVE</h3>
+            <div id="repo-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Injected -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+
+</html>

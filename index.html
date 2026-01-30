@@ -1,23 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Account Search</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analyst X</title>
+  <!-- Inline style to prevent any initial flash -->
+  <style>
+    body {
+      opacity: 0;
+      background-color: #000;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-    
-    <div class="search-box">
-        <input type="text" id="github-username" placeholder="Search Github Username..." required />
-        <button onclick="getGithubUser()">Search</button>
-    </div>
 
-    <div id="user-details" class="glassmorphism-box">
-        <!-- User Details will be displayed here -->
-    </div>
+  <main id="main-content" class="main-wrapper">
 
-    <!-- Main Script -->
-    <script src="js/script.js"></script>
+    <!-- SEARCH VIEW -->
+    <section id="search-view" class="hero-container">
+      <h1 class="giant-text" id="main-title">
+        GITHUB<br><span class="text-zinc-700">ANALYST</span>
+      </h1>
+
+      <div class="search-underline">
+        <input type="text" id="username-input" class="minimal-input" placeholder="ENTER USERNAME..." autocomplete="off"
+          spellcheck="false">
+        <button id="search-btn" class="absolute right-0 bottom-4 text-zinc-600 hover:text-white transition-colors">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- DASHBOARD VIEW (Hidden) -->
+    <section id="dashboard-view" class="hidden opacity-0 py-20">
+
+      <!-- Dashboard Top -->
+      <div class="flex items-center justify-between mb-20">
+        <div class="flex items-center gap-10 group cursor-pointer" id="back-home">
+          <div
+            class="w-20 h-20 bg-zinc-900 rounded-full flex items-center justify-center border border-white/5 transition-all group-hover:bg-white group-hover:text-black">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+          </div>
+        </div>
+        <div class="text-right">
+          <h2 class="text-4xl font-bold font-[Plus_Jakarta_Sans]" id="user-display-name">Full Name</h2>
+          <p class="text-zinc-500 font-mono text-sm uppercase tracking-widest" id="user-display-login">@username</p>
+        </div>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+        <!-- Profile Block -->
+        <div class="lg:col-span-4 glass-bento flex flex-col items-center">
+          <div class="w-full aspect-square bg-zinc-950 rounded-[32px] overflow-hidden mb-10 border border-white/5">
+            <img id="avatar" src="" alt="" class="w-full h-full object-cover">
+          </div>
+
+          <div class="w-full space-y-8">
+            <div>
+              <span class="text-zinc-600 text-[10px] font-mono uppercase tracking-[0.2em] block mb-4">Biography</span>
+              <p id="bio" class="text-zinc-400 text-xl font-light italic leading-relaxed"></p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6 pt-8 border-t border-white/5">
+              <div id="location-ui" class="hidden flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-zinc-500">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">Location</p>
+                  <p id="location" class="text-white text-sm font-medium"></p>
+                </div>
+              </div>
+              <div id="website-ui" class="hidden flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-zinc-500">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M2 12h20" />
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">Interface</p>
+                  <a id="website" href="#" target="_blank"
+                    class="text-white text-sm font-medium hover:text-blue-400 truncate block max-w-[200px]"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats & Repos -->
+        <div class="lg:col-span-8 space-y-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-bento p-10">
+              <span class="text-zinc-600 text-xs font-mono uppercase tracking-widest block mb-4">Repos</span>
+              <div class="stat-val" id="repos-count">0</div>
+            </div>
+            <div class="glass-bento p-10">
+              <span class="text-zinc-600 text-xs font-mono uppercase tracking-widest block mb-4">Followers</span>
+              <div class="stat-val" id="followers-count">0</div>
+            </div>
+            <div class="glass-bento p-10">
+              <span class="text-zinc-600 text-xs font-mono uppercase tracking-widest block mb-4">Following</span>
+              <div class="stat-val" id="following-count">0</div>
+            </div>
+          </div>
+
+          <div class="glass-bento p-10">
+            <h3 class="text-2xl font-bold mb-10">LATEST_ACTIVITY</h3>
+            <div id="repo-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Injected -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ERROR TOAST -->
+    <div id="error-toast">USER NOT FOUND</div>
+
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>
